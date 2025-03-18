@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Actor-App",
+    "slug": "Actor-App",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/app-logo.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "icon": {
+        "dark": "./assets/icons/Tinted.png",
+        "light": "./assets/icons/Tinted.png",
+        "tinted": "./assets/icons/Tinted.png"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/Tinted.png",
+        "backgroundColor": "#161616"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/png/app-logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#121212"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+    
+  }
+}
