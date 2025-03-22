@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Stack } from "expo-router";
+import { Stack, Updates } from "expo-router";
 import {
   View,
   Image,
@@ -9,6 +9,7 @@ import {
   Text,
   TouchableOpacity,
   BackHandler,
+  I18nManager,
 } from "react-native";
 
 import * as NavigationBar from "expo-navigation-bar";
@@ -60,6 +61,17 @@ export default function RootLayout() {
     hideSplashScreen();
     customNavigationBar();
     LoadingTheFont();
+  }, []);
+
+  useEffect(() => {
+    const enableRTL = async () => {
+      if (!I18nManager.isRTL) {
+        I18nManager.forceRTL(true);
+        I18nManager.allowRTL(true);
+        await Updates.reloadAsync();
+      }
+    };
+    enableRTL();
   }, []);
 
   useEffect(() => {
@@ -130,7 +142,7 @@ const styles = StyleSheet.create({
   },
 
   alertBtnHappy: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "center",
     gap: 8,
@@ -141,7 +153,7 @@ const styles = StyleSheet.create({
   },
 
   alertBtnSad: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "center",
     gap: 8,

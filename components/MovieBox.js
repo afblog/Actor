@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  I18nManager,
+} from "react-native";
 import React from "react";
 
 import * as Svgs from "../assets/images/svg/Svg";
@@ -15,9 +21,11 @@ export default function MovieBox({ title, director, img }) {
           {Svgs[img] && React.createElement(Svgs[img])}
         </View>
       </View>
-      <TouchableOpacity style={styles.btnTicket}>
-        <Text style={styles.btnTicketText}>خرید بلیت</Text>
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity style={styles.btnTicket}>
+          <Text style={styles.btnTicketText}>خرید بلیت</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -25,8 +33,7 @@ export default function MovieBox({ title, director, img }) {
 const styles = StyleSheet.create({
   box: {
     position: "relative",
-    justifyContent: "center",
-    alignItems: "flex-end",
+    flexDirection: I18nManager.isRTL ? "row" : "row-reverse",
     backgroundColor: "#202020",
     paddingVertical: 10,
     paddingHorizontal: 16,
@@ -34,20 +41,20 @@ const styles = StyleSheet.create({
   },
 
   boxItem: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     gap: 8,
   },
 
   movieName: {
     fontFamily: "Dana-DemiBold",
-    textAlign: "right",
+    textAlign: I18nManager.isRTL ? "left" : "right",
     color: "#F3F0E3",
     fontSize: 18,
   },
 
   movieDirector: {
     fontFamily: "Dana-Regular",
-    textAlign: "right",
+    textAlign: I18nManager.isRTL ? "left" : "right",
     color: "#DCD9CA",
     marginTop: 4,
   },
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
   btnTicket: {
     position: "absolute",
     bottom: 10,
-    left: 16,
+    left: I18nManager.isRTL ? 45 : -110,
     padding: 10,
     backgroundColor: "#F6C977",
     borderRadius: 4,

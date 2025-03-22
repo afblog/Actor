@@ -1,4 +1,10 @@
-import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  I18nManager,
+} from "react-native";
 import React from "react";
 import { useRouter } from "expo-router";
 
@@ -29,7 +35,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   header: {
     width: "100%",
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "space-between",
     paddingLeft: 16,

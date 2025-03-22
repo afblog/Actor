@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Dimensions, StyleSheet } from "react-native";
+import { View, Dimensions, StyleSheet, I18nManager } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel-v4";
 
 import * as Svgs from "../assets/images/svg/Svg";
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   slide: {
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "center",
   },

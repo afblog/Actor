@@ -8,6 +8,7 @@ import {
   Keyboard,
   Platform,
   TouchableOpacity,
+  I18nManager,
 } from "react-native";
 
 import { useRouter } from "expo-router";
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
   },
 
   input_box: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "space-between",
     backgroundColor: "#F4F5F6",
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
 
   prefixContainer: {
     height: "100%",
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 8,
@@ -175,7 +176,8 @@ const styles = StyleSheet.create({
     width: 1,
     height: "70%",
     backgroundColor: "#C2CEDB",
-    marginLeft: 8,
+    marginRight: I18nManager.isRTL ? 8 : 0,
+    marginLeft: I18nManager.isRTL ? 0 : 8,
   },
 
   input: {
@@ -198,7 +200,7 @@ const styles = StyleSheet.create({
   },
 
   error_box: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "flex-end",
     gap: 5,
@@ -212,7 +214,7 @@ const styles = StyleSheet.create({
   errorTitle: {
     color: "#F5222D",
     fontFamily: "Dana-Medium",
-    textAlign: "right",
+    textAlign: I18nManager.isRTL ? "left" : "right",
   },
 
   error: {
@@ -261,7 +263,7 @@ const styles = StyleSheet.create({
 
   loginBtnStyle: {
     width: 300,
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "center",
     gap: 8,

@@ -4,6 +4,7 @@ import {
   ImageBackground,
   Text,
   TouchableOpacity,
+  I18nManager,
 } from "react-native";
 import React from "react";
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   bgImage: {
     marginTop: 32,
     padding: 16,
-    alignItems: "flex-end",
+    alignItems: I18nManager.isRTL ? "flex-start" : "flex-end",
   },
 
   movieName: {
@@ -73,9 +74,9 @@ const styles = StyleSheet.create({
 
   downloadBox: {
     position: "absolute",
-    right: 230,
+    right: I18nManager.isRTL ? -335 : 225,
     bottom: 0,
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     gap: 8,
     backgroundColor: "#F6C977",

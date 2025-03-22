@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, I18nManager } from "react-native";
 import React from "react";
 
 export default function CategoryTitle({ title, marginTop }) {
@@ -12,7 +12,7 @@ export default function CategoryTitle({ title, marginTop }) {
 
 const styles = StyleSheet.create({
   categoryContainer: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 20,

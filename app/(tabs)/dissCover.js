@@ -1,5 +1,11 @@
 import React from "react";
-import { View, SafeAreaView, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  I18nManager,
+} from "react-native";
 
 import Header from "../../components/Header";
 import SearchInput from "../../components/InputSearch";
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
   },
 
   comediCategory: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "space-between",
   },

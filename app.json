@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "Actor-App",
+    "name": "Actor",
     "slug": "Actor-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/app-logo.png",
     "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
@@ -14,13 +14,18 @@
         "dark": "./assets/icons/Tinted.png",
         "light": "./assets/icons/Tinted.png",
         "tinted": "./assets/icons/Tinted.png"
+      },
+      "bundleIdentifier": "com.afblog.ActorApp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icons/Tinted.png",
         "backgroundColor": "#161616"
-      }
+      },
+      "package": "com.afblog.ActorApp"
     },
     "web": {
       "bundler": "metro",
@@ -37,11 +42,21 @@
           "resizeMode": "contain",
           "backgroundColor": "#121212"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "supportsRTL": true,
+      "forcesRTL": true,
+      "eas": {
+        "projectId": "142fdf58-52c0-47a1-8ee0-7f782ca1975f"
+      }
     }
-    
   }
 }

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
+  I18nManager,
 } from "react-native";
 
 import Header from "../../components/Header";
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   },
 
   categoryBoxs: {
-    flexDirection: "row",
+    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
@@ -90,6 +91,6 @@ const styles = StyleSheet.create({
     fontFamily: "Morabba-Medium",
     fontSize: 18,
     color: "#F3F0E3",
-    textAlign: "right",
+    textAlign: I18nManager.isRTL ? "left" : "right",
   },
 });
